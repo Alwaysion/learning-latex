@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,   
+    urlcolor=blue,
+    citecolor=cyan,
+}
+
+\lstset{
+    basicstyle=\ttfamily,
+    showstringspaces=false,
+    commentstyle=\color{red},
+    keywordstyle=\color{blue}
+}
+\begin{document}
+
+    Hello \LaTeX !
+
+    texlive download: \href{https://www.tug.org/texlive/}{TeX Live - TeX Users Group}
+
+    compile \LaTeX :
+    \begin{lstlisting}[language=bash]
+        latex latex.tex  # generate latex.dvi file
+        dvipdfmx latex.dvi  # generate latex.pdf file
+    \end{lstlisting}
+
+    or:
+    \begin{lstlisting}[language=bash]
+        latex latex.tex  # directly generate latex.pdf file
+    \end{lstlisting}
+
+    TeXstudio download: \href{https://www.texstudio.org/#download}{TeXstudio}
+
+\end{document}

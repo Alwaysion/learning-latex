@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}  % 方括号为字体大小（nomalsize），是可选参数，一般只有10，11和12
+\usepackage{ctex}
+
+\newcommand{\myfont}{\textit{\textbf{\textsf{Fancy Text}}}}  % LaTeX讲求内容与形式分离的思想，要修改字体样式仅修改此处即可
+
+
+\begin{document}
+    % LaTeX中字体有五种属性，字体编码（正文、数学），字体族（罗马，无衬线、打字机），字体系列（粗细、宽度），字体形状（直立、斜体、伪斜体、小型大写），字体大小
+    
+    % 字体族：
+    \textrm{Roman Family} \textsf{Sans Serif Family} \texttt{Typewriter Family}  % 和下面效果相同
+
+    {\rmfamily Roman Family} {\sffamily Sans Serif Family} {\ttfamily Typewriter Family}
+
+    \sffamily who you are? you find self on everyone around.
+    take you as the same as others!
+    % 字体声明会一直影响后续字体，直到遇到新的声明
+
+    {\ttfamily Are you wiser than others? definitely no. in some ways, may it is true. What can you achieve? a luxurious house? a brilliant car? an admirable career? who knows?}
+
+    % 字体系列：
+    \textup{Upright Shape} \textit{Italic Shape} \textsl{Slanted Shape} \textsc{Small Caps Shape}
+
+    {\upshape Upright Shape} {\itshape Italic Shape} {\slshape Slanted Shape} {\scshape Small Caps Shape}
+
+    % 中文字体：
+    {\songti 宋体} \quad {\heiti 黑体} \quad {\fangsong 仿宋} \quad {\kaishu 楷书}
+
+    中文字体的\textbf{粗体}与\textit{斜体}  % 不知点解，生成的PDF这一行只有粗体生效，其它的字包括斜体都是黑体，和视频的不一样
+
+    % 字体大小（与nomalsiaze相对的大小）：
+    {\tiny          Hello}\\
+    {\scriptsize    Hello}\\
+    {\footnotesize  Hello}\\
+    {\small         Hello}\\
+    {\normalsize    Hello}\\
+    {\large         Hello}\\
+    {\Large         Hello}\\
+    {\LARGE         Hello}\\
+    {\huge          Hello}\\
+    {\Huge          Hello}
+
+    % 中文字号设置命令：
+    \zihao{-0} 你好！  % -0（负零）表示小初号
+
+    \zihao{5} 你好！  % 也可以为5
+
+    \myfont
+    
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass{ctexbook}
+% \usepackage{ctex}
+
+% 设置标题的格式
+\ctexset{  % 文档类参数设置为ctex开头的类这里才不会报错
+    section = {
+        format+ = \zihao{-4} \heiti \raggedright,
+        name = {,、},  % 英文逗号，顿号
+        number = \chinese{section},
+        beforeskip = 1.0ex plus 0.2ex minus .2ex,
+        afterskip = 1.0ex plus 0.2ex minus .2ex,
+        aftername = \hspace{0pt}
+    },
+    subsection = {
+        format+ = \zihao{5} \heiti \raggedright,
+        name = {,、},
+        number = \arabic{section},
+        beforeskip = 1.0ex plus 0.2ex minus .2ex,
+        afterskip = 1.0ex plus 0.2ex minus .2ex,
+        aftername = \hspace{0pt}
+    }
+}
+
+
+\begin{document}
+    % 文档的基本结构
+    \section{引言}  % 文档类设置为ctexart时，section标题会居中
+    近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来
+
+    % 双反斜杠仅换行，但没缩进，而通\par可以将段落一分为二（注意空格），但为保证源文件可读性，通常使用空行
+    近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来\\近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来近年来\par 近年来近年来近年来近年来近年来近年来
+    \section{实验方法}
+    \section{实验结果}
+    \subsection{数据}
+    \subsection{图表}
+    \subsubsection{实验条件}
+    \subsubsection{实验过程}
+    \subsection{结果分析}
+    \section{结论}
+    \section{致谢}
+
+    % 带章节的大纲
+    \tableofcontents  % 生成文档目录
+
+    \chapter{绪论}  % 文档类要为(ctex)book
+    \section{研究的目的和意义}
+    \section{国内外研究现状}
+    \subsection{国内研究现状}
+    \subsection{国外研究现状}
+    \section{研究内容}
+    \section{研究方法与技术路线}
+    \subsection{研究内容}
+    \subsection{技术路线}
+    
+    \chapter{实验与结果分析}
+    \section{引言}
+    \section{实验方法}
+    \section{实验结果}
+    \subsection{数据}
+    \subsection{图表}
+    \subsubsection{实验条件}  % subsubsection命令在（ctex）book文档类中不起作用
+    \subsubsection{实验过程}
+    \subsection{结果分析}
+    \section{结论}
+    \section{致谢}
+
+\end{document}

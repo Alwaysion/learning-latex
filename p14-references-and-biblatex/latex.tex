@@ -1,0 +1,41 @@
+\documentclass{ctexart}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    citecolor=cyan,
+}
+
+% biblatex/biber
+% 新的TeX参考文献排版引擎
+% 样式文件（参考文献样式文件--bbx文件，引用样式文件--cbx文件）使用LaTeX编写（编写和维护相对简单）
+% 支持根据本地化排版，如：
+%    biber -l zh__pinyin texfile，按拼音排序
+%    biber -l zh__stroke texfile，按笔画排序
+
+\usepackage[style = numeric, backend = biber]{biblatex}
+% \usepackage[style = caspervector, backend = biber, utf8, sorting = cenyt]{biblatex}
+% v0.3.0开始，原 centy/ecnty 排序方案被 cenyt/ecnyt 排序方案取代
+% c，Chinese；e，English；n，name；y，year；t，title
+
+\addbibresource{test.bib}  % 不能省略后缀名
+
+
+\begin{document}
+    % 一次管理，多次应用
+    无格式化引用\cite{biblatex}
+
+    带方括号引用\parencite{3-2}
+
+    上标引用\supercite{6-1}
+
+    \nocite{*}
+    % \printbibliography[title = 参考文献]
+    \printbibliography[title = 文献] % 使用caspervector样式时，title默认值为“参考文献”
+
+    biblatex-caspervector：\href{https://github.com/CasperVector/biblatex-caspervector}{CasperVector/biblatex-caspervector: A simple, nice and easily extensible biblography / citation style for Chinese LaTeX users}
+
+\end{document}

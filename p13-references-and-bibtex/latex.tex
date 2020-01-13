@@ -1,0 +1,59 @@
+\documentclass{ctexart}
+\usepackage{hyperref}  % 这里加入此宏包原本只是为了在生成的PDF文件里加入超链接，后来发现竟然可以实现”点击引用括号里的数字可以跳转到对应参考文献条目“的效果
+% \usepackage[round]{natbib}
+% 可以使用更多的样式，如plainnat
+% round可选参数可以将方括号编程圆括号
+% 该宏包还提供了\citet和\citep命令
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    citecolor=cyan,
+}
+
+\bibliographystyle{plain}  % 其它样式还有unsrt，alpha，abbrv等
+
+
+\begin{document}
+    % 一、直接把参考文献写在LaTeX源文件里
+    % 一次管理，一次使用
+    % 参考文献格式
+    % \begin{thebibliography}{编号样本}
+    %     \bibitem[记号]{引用标志}文献条目1
+    %     \bibitem[记号]{引用标志}文献条目2
+    %     ...
+    % \end{thebibliography}
+    % 其中文献条目包括：作者，题目，出版社，年代，版本，页码等。
+    % 引用时候要采用：\cite{引用标志1，引用标志2，...}
+
+    引用一篇文章\cite{article1} 引用一本书\cite{book1} 引用另一本书\cite{latexGuide}等等
+    \begin{thebibliography}{99}
+        \bibitem{article1}陈立辉, 苏伟, 蔡川, 陈晓云. \emph{基于\LaTeX 的Web数学公式提取方法研究}[J]. 计算机科学. 2014(06)
+        \bibitem{book1}William H. Press, Saul A. Teukolsky, William T. Vetterling, Brian P. Flanery. \emph{Numerical Recipes 3rd Edition: The Art of Scientific Computing}. Cambridge University Press, New York, 2007.
+        \bibitem{latexGuide}Kopka Helmut, W. Daly Patrick. \emph{Guide to \LaTeX}, $4^{th}$ Edition. Available at \texttt{https://www.amazon.com}.
+        \bibitem{latexMath}Grätzer George. \emph{Math Into \LaTeX}. Birkhäuser Boston; 3 edition (June 22, 2000).
+    \end{thebibliography}
+
+    ----------------------------------------手动分隔线------------------------------------
+
+    % 二、用外部文件管理参考文献
+    % 一次管理，多次使用
+    上面第4条参考文献是一本书，但格式似乎不对，应该是老师直接用了书的信息（见：\href{https://www.amazon.com/Math-LaTeX-George-Gr%C3%A4tzer-2000-06-22/dp/B017YC6E06}{Math Into LaTeX by George Grätzer (2000-06-22): Amazon.com: Books}）
+    
+    从下面第1条参考文献\cite{latexMath2}可见，正确的书籍引用文献条目格式大致应该为：作者. 标题. 出版社, 地址, 版本, 年份.（另见文件latexMath.bib）（貌似文献引用格式bittex中，Month少见...）
+
+    这是一个参考文献的引用：\cite{mittelbach2004}  % 如果下面的\bibliography命令中没添加该引用文献定义所在的bib文件的文件名（test），这里将会显示成问号而不是数字
+
+    这是另一个引用：\cite{patashnik1988designing}
+
+    \nocite{*}  % 加上这行可以使未被引用的参考文献也出现在“参考文献”中。如果文档中仅有参考文献而未有任何引用，且不加上这行，bibtex编译器会报错（也从视频中可见）
+    \bibliography{latexMath, test, cnki}
+    % 也可以把所有参考文献都放在一个bib文件中来管理
+
+    Zotero下载：\href{https://www.zotero.org/download/}{Zotero | Downloads}
+
+    值得注意的是，现在0202年的Zotero不像视频中的那样安装浏览器插件就行，还要安装桌面版，而插件则变成了Zotero Connector，顾名思义，用来沟通桌面版Zetero的
+
+\end{document}

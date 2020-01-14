@@ -16,8 +16,8 @@
 %    biber -l zh__pinyin texfile，按拼音排序
 %    biber -l zh__stroke texfile，按笔画排序
 
-\usepackage[style = numeric, backend = biber]{biblatex}
-% \usepackage[style = caspervector, backend = biber, utf8, sorting = cenyt]{biblatex}
+% \usepackage[style = numeric, backend = biber]{biblatex}
+\usepackage[style = caspervector, backend = biber, utf8, sorting = cenyt]{biblatex}
 % v0.3.0开始，原 centy/ecnty 排序方案被 cenyt/ecnyt 排序方案取代
 % c，Chinese；e，English；n，name；y，year；t，title
 
@@ -26,7 +26,7 @@
 
 \begin{document}
     % 一次管理，多次应用
-    无格式化引用\cite{biblatex}
+    % 无格式化引用\cite{biblatex}  % 使用这个下载的caspervector样式时，如果引用了bib数据库中未定义的参考文献，则会导致参考文献编号全为零
 
     带方括号引用\parencite{3-2}
 
